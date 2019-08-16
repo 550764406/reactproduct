@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Routes from './routers/routes';
+import NoFound from './components/noFound';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Router>
+            <Switch>
+                {
+                    Routes.map((route, key) => {
+                        if (route.exact) {
+                            return <Route exact path={route.path} component={route.component} key={key} />
+                        }
+                        // else if(route.path == '/loginContorl'){
+                        //     return <Route path={`${route.path}/:id?`} component={route.component} key={key}  />
+                        // }
+                        else {
+                            return <Route path={route.path} component={route.component} key={key} />
+                        }
+                    })
+                }
+                <Route component={NoFound} />
+            </Switch>
+        </Router>
     </div>
   );
 }
