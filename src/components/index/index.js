@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import { Button } from 'antd';
 import axios from 'axios';
+import { $getList } from '../../api/api';
 
 class Index extends Component{
     constructor(props){
@@ -10,9 +11,14 @@ class Index extends Component{
         }
     }
     btnclick(){
-        axios.get('/api/list').then((data)=>{
-            console.log('请求成功了',data);
+        console.log('22222222222222');
+        $getList( res=>{
+            debugger
+            console.log('11111111111111111',res)
         })
+        // axios.get('/api/list').then((data)=>{
+        //     console.log('请求成功了',data);
+        // })
     }
 
     render() {

@@ -1,16 +1,43 @@
-import Index from '../components/index/index';
-import Hello from '../components/hello/hello';
+import React from 'react';
+function asyncComponent(getComponent) {
+    return class AsyncComponent extends React.Component {
+        static Component = null;
+        state = {Component: AsyncComponent.Component};
+
+        componentWillMount() {
+            if (!this.state.Component) {
+                getComponent().then(({default: Component}) => {
+                    AsyncComponent.Component = Component
+                    this.setState({Component})
+                })
+            }
+        }
+
+        render() {
+            const {Component} = this.state
+            if (Component) {
+                return <Component {...this.props} />
+            }
+            return null
+        }
+    }
+}
 
 const routes = [
     {
         path: '/',
-        component: Index,
+        component: asyncComponent(() => import('../components/index/index')),
         exact: true
     },
     {
         path: '/hello',
-        component: Hello
+        component: asyncComponent(() => import('../components/hello/hello')),
+    },
+    {
+        path: '/header',
+        component: asyncComponent(() => import('../common/header')),
     }
 ]
+
 
 export default routes;

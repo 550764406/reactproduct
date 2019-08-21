@@ -30,7 +30,7 @@ router.get('/list',(req,res)=>{
             age: 18
         },
     ]
-    //console.log(res.json(list))
+    console.log(res.json(list))
     res.json(list);
 });
 app.use('/api',router); //为所有路由添加api前缀
