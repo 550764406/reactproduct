@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Routes from './routers/routes';
-import NoFound from './components/noFound';
+import NoFound from './components/nofound/noFound';
 
 function App() {
   return (

@@ -16,3 +16,5 @@
 7、安装xios 这里需要在packjson里配置一下proxy
 8、安装redux、react-redux、redux-logger、redux-thunk
 https://juejin.im/post/5ae3317e6fb9a07ac021fba4#heading-3
+9、安装less npm install less less-loader
+10、修改overrides.js文件，添加addLessLoader

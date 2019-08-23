@@ -62,5 +62,14 @@ function postRequest (url,action,obj, successFn) {
  * param successFn 
 */
 export function $getList(successFn) {
-    getRequest('http://localhost:3000','/api/list','',successFn);
+    postRequest('http://localhost:3000','/app/mock/223715/shop/home','',successFn);
+}
+
+/*
+ * 1.获取list信息
+ * @param params 请求参数
+ * param successFn
+*/
+export function $getList1(successFn) {
+    postRequest('http://localhost:3000','/api/list1','',successFn);
 }
