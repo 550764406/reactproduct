@@ -31,7 +31,7 @@ class Header extends React.Component{
                         <img src={logo} alt='' className="logo" />
                     </Col>
                     <Col span={10}>
-                        <Tabs defaultActiveKey='2' className="logomiddle">
+                        <Tabs defaultActiveKey='2' className="logomiddle" animated={false}>
                             <TabPane tab={<span>供应商</span>} key='1'>
                                 <Search placeholder='请输入供应商' enterButton='Search' size='large' onSearch={(value) => console.log(value)} />
                             </TabPane>
