@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import { Row, Col, Tabs, Icon, Input, Button } from 'antd';
 import logo from '../assets/img/logo.png';
 
@@ -9,6 +11,7 @@ const hotsearchList = ['矿泉水', '康师傅', '绿茶', '雪碧', '瓜子', '
 class Header extends React.Component{
     render(){
         return(
+            <div>comm -header</div>
             <div className="header">
                 <Row>
                     <Col span={6}>
@@ -59,6 +62,7 @@ class Header extends React.Component{
                     </Col>
                 </Row>
             </div>
+
         )
     }
 }
