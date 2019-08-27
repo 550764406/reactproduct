@@ -1,9 +1,17 @@
-import fetch from 'isomorphic-unfetch';
-import{ INITHOME } from './actionType';
-import { $getList } from '../api/api';
+// import fetch from 'isomorphic-unfetch';
+import{ INITHOME,INITOFTENHOME,INITSELLERLISTHOME } from './actionType';
+import { $getList,$getOftenList,$getIndexSellerList } from '../api/api';
 
 const initType = (data)=>({
     type: INITHOME,
+    data
+})
+const initOftenType = (data)=>({
+    type: INITOFTENHOME,
+    data
+})
+const initIndexSellerType = (data)=>({
+    type: INITSELLERLISTHOME,
     data
 })
 
@@ -13,6 +21,21 @@ export const getInitHomeData = () => {
             dispatch(initType(data))
         });
     }
+}
+export const getInitHomeOftenData = () => {
+    return  (dispatch) => {
+        $getOftenList((data)=>{
+            dispatch(initOftenType(data))
+        })
+    }
+}
+
+export const getInitIndexSellerData = ()=>{
+    return (dispatch=>{
+        $getIndexSellerList((data)=>{
+            dispatch(initIndexSellerType(data));
+        })
+    })
 }
 
 

@@ -120,7 +120,8 @@
   h1 {
     font-size: 20px;
     position: relative;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 2px;
     em {
       display: inline-block;
       margin-left: 20px;
@@ -132,34 +133,83 @@
     }
     span {
       position: absolute;
-      right: 0;
-      top: 10px;
+      right: 10px;
+      top: 30px;
       font-size: 14px;
     }
   }
-  dl {
-    text-align: center;
-    background: #fff;
-    margin: 10px;
-    padding: 10px;
-    dt {
-      margin-bottom: 10px;
+  h2 {
+    font-size: 20px;
+    position: relative;
+    padding: 20px 0 15px;
+    border-bottom: 2px solid #00a5eb;
+    b {
+      display: inline-block;
+      margin-left: 20px;
+      font-weight: normal;
+      font-size: 14px;
+      padding: 2px 8px;
+      &:after{
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #00a5eb;
+        position: absolute;
+        bottom: 0;
+        left: 110px;
+      }
     }
-    dd {
-      margin-top: 10px;
-      span {
-        color: #e90000;
-        font-size: 20px;
-        font-weight: bold;
-        b {
-          font-size: 14px;
-          font-weight: normal;
+    span {
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      font-size: 14px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    position: relative;
+    padding: 20px 0 15px 35px;
+    background: url("../../assets/img/recommand.png") no-repeat left center;
+    span {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      font-size: 14px;
+    }
+  }
+  a{
+    dl {
+      text-align: center;
+      background: #fff;
+      margin: 10px;
+      padding: 10px;
+      font-size: 12px;
+      color: #333;
+      dt {
+        margin-bottom: 10px;
+      }
+      dd {
+        margin-top: 10px;
+        span {
+          color: #e90000;
+          font-size: 20px;
+          font-weight: bold;
+          b {
+            font-size: 14px;
+            font-weight: normal;
+          }
+        }
+        em{
+          color: #999;
+          text-decoration: underline;
+          font-style: normal;
         }
       }
     }
-  }
-  .mart20 {
-    margin-top: 20px;
   }
   .saletab {
     display: block;
@@ -167,26 +217,70 @@
     color: #fff;
   }
   .salemain {
-    :global {
-      .ant-tabs-nav .ant-tabs-tab {
-        background: #fff;
-        margin-right: 0;
-        padding: 10px 20px;
-        border-bottom: none;
+    clear: both;
+    margin-top: 10px;
+    .ant-tabs-nav .ant-tabs-tab {
+      background: #fff;
+      margin-right: 0;
+      border-bottom: none;
+      color: #666;
+      font-size: 18px;
+      padding: 2px 30px 6px;
+      border: none;
+      border-radius: 0;
+    }
+    .ant-tabs-nav .ant-tabs-tab-active {
+      background: #fc5701;
+      color: #fff;
+    }
+    .ant-tabs-bar {
+      padding-bottom: 1px;
+      border-bottom: 2px solid #fc5701;
+    }
+    .ant-tabs-ink-bar {
+      background-color: #f00;
+      display: none !important;
+    }
+    .ant-tabs-nav-wrap {
+      margin-bottom: 1px;
+    }
+  }
+
+  .shopCon{
+    clear: both;
+    background: #fff;
+    padding: 20px 30px;
+    color: #333;
+    dt{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    dd{
+      color: #999;
+      span{
+        color: #333;
       }
-      .ant-tabs-nav .ant-tabs-tab-active {
-        background: #fc5701;
-        color: #fff;
+      &.text-center{
+        text-align: center;
       }
-      .ant-tabs-bar {
-        border-bottom: 2px solid #fc5701;
+      img{
+        margin: 10px 0;
       }
-      .ant-tabs-ink-bar {
-        background-color: #f00;
-        display: none !important;
-      }
-      .ant-tabs-nav-wrap {
-        margin-bottom: 1px;
+      a{
+        display: inline-block;
+        width: 108px;
+        height: 34px;
+        line-height: 34px;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        margin: 0 auto;
+        font-size: 14px;
+        margin: 0 auto;
+        color: #333;
+        &:hover{
+          color: #fff;
+          background: #fc5701;
+        }
       }
     }
   }

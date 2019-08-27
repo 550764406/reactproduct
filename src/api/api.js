@@ -66,10 +66,19 @@ export function $getList(successFn) {
 }
 
 /*
+ * 2.获取list1信息
+ * @param params 请求参数
+ * param successFn
+*/
+export function $getOftenList(successFn) {
+    postRequest('http://localhost:3000','/app/mock/223715/shop/offenbuy','',successFn);
+}
+
+/*
  * 1.获取list信息
  * @param params 请求参数
  * param successFn
 */
-export function $getList1(successFn) {
-    postRequest('http://localhost:3000','/api/list1','',successFn);
+export function $getIndexSellerList(successFn) {
+    getRequest('http://localhost:3000','/app/mock/223715/shop/indexseller','',successFn);
 }
