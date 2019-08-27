@@ -1,0 +1,1 @@
+export const INITHOME  = "init_home";

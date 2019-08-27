@@ -1,0 +1,193 @@
+/** @format */
+
+.header {
+  background: #f2f2f2;
+  color: #666;
+  height: 35px;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 35px;
+  padding: 0 150px;
+  clear: both;
+  .headerright {
+    span {
+      color: #e90000;
+    }
+  }
+  .logo {
+    padding: 30px 0;
+  }
+  .logomiddle {
+    button {
+      background: #d31a26;
+      border-color: #d31a26;
+    }
+  }
+  .loginbtn {
+    padding: 40px 0;
+    text-align: right;
+    button {
+      margin-left: 10px;
+      border: 1px solid #dedede;
+      height: 38px;
+      i {
+        color: #d31a26;
+      }
+      .badge{
+        position: absolute;
+        right: -5px;
+        top: -10px;
+        z-index: 10;
+        min-width: 20px;
+        max-width: 30px;
+        height: 20px;
+        padding: 0 6px;
+        color: #fff;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 20px;
+        white-space: nowrap;
+        text-align: center;
+        background: #f5222d;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 0 0 1px #fff;
+        box-shadow: 0 0 0 1px #fff;
+        font-style: normal;
+      }
+    }
+  }
+  .hotsearch {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 50px;
+    a {
+      margin-left: 6px;
+      color: #999;
+    }
+  }
+}
+
+.menuitemsort {
+  font-style: normal;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.menuitemsortlist {
+  a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.banner {
+  clear: both;
+  height: 440px;
+  background: url('../../assets/img/cspcabanner.jpg') no-repeat center top;
+  .contentwarper {
+    padding: 0 150px;
+    position: relative;
+    margin-top: 200px;
+    .menutitle {
+      position: absolute;
+      top: -40px;
+      span {
+        display: block;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        background: #d31a26;
+        color: #fff;
+        text-align: center;
+      }
+      ul {
+        position: absolute;
+        top: 5px;
+        left: 200px;
+        width: 600px;
+        li {
+          display: inline-block;
+          float: left;
+          padding: 0 30px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.salewarper {
+  padding: 0 150px;
+  background: #f5f5f5;
+  h1 {
+    font-size: 20px;
+    position: relative;
+    margin-top: 20px;
+    em {
+      display: inline-block;
+      margin-left: 20px;
+      font-style: normal;
+      font-size: 14px;
+      color: #fff;
+      background: #fc5701;
+      padding: 2px 8px;
+    }
+    span {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      font-size: 14px;
+    }
+  }
+  dl {
+    text-align: center;
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+    dt {
+      margin-bottom: 10px;
+    }
+    dd {
+      margin-top: 10px;
+      span {
+        color: #e90000;
+        font-size: 20px;
+        font-weight: bold;
+        b {
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .mart20 {
+    margin-top: 20px;
+  }
+  .saletab {
+    display: block;
+    background: #fc5701;
+    color: #fff;
+  }
+  .salemain {
+    :global {
+      .ant-tabs-nav .ant-tabs-tab {
+        background: #fff;
+        margin-right: 0;
+        padding: 10px 20px;
+        border-bottom: none;
+      }
+      .ant-tabs-nav .ant-tabs-tab-active {
+        background: #fc5701;
+        color: #fff;
+      }
+      .ant-tabs-bar {
+        border-bottom: 2px solid #fc5701;
+      }
+      .ant-tabs-ink-bar {
+        background-color: #f00;
+        display: none !important;
+      }
+      .ant-tabs-nav-wrap {
+        margin-bottom: 1px;
+      }
+    }
+  }
+}

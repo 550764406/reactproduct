@@ -7,7 +7,9 @@ export default (state = defaultStatus,action)=>{
     console.log('action',action)
     switch (action.type){
         case INITHOME:
-            return Object.assign(state,action.data);
+            const newState = JSON.parse(JSON.stringify(state));
+            newState.lists = action.data;
+            return newState;
         default:
             return state
     }

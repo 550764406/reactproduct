@@ -8,14 +8,14 @@ const initType = (data)=>({
 })
 
 export const getInitHomeData = () => {
-    return (dispatch) => {
-       $getList(function (data) {
-           dispatch(initType(data))
+    return  (dispatch) => {
+       $getList( (data) => {
+            dispatch(initType(data))
         });
-
     }
-
 }
+
+
 
 // export const getInitHomeData = ()=> {
 //     return async (dispatch)=>{
@@ -23,6 +23,7 @@ export const getInitHomeData = () => {
 //             method: 'post'
 //         })
 //         const data = await res.json();
+//         console.log('44444444444444==========>',data)
 //         dispatch(initType(data))
 //     }
 //

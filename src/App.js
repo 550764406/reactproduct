@@ -1,11 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/index';
 import Routes from './routers/routes';
 import NoFound from './components/nofound/noFound';
 
 function App() {
   return (
-    <div className="App">
+    <Provider className="App" store={store}>
         <Router>
             <Switch>
                 {
@@ -24,7 +26,7 @@ function App() {
                 <Route component={NoFound} />
             </Switch>
         </Router>
-    </div>
+    </Provider>
   );
 }
 
