@@ -10,7 +10,6 @@ class Header extends React.Component{
     render(){
         return(
             <>
-            <div>comm -header</div>
             <div className="header">
                 <Row>
                     <Col span={6}>

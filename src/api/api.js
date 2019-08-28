@@ -61,7 +61,7 @@ function postRequest (url,action,obj, successFn) {
  * @param params 请求参数
  * param successFn 
 */
-export function $getList(successFn) {
+export function $getHomeList(successFn) {
     postRequest('http://localhost:3000','/app/mock/223715/shop/home','',successFn);
 }
 
@@ -75,10 +75,18 @@ export function $getOftenList(successFn) {
 }
 
 /*
- * 1.获取list信息
+ * 1.获取首页---酒水饮料信息
  * @param params 请求参数
  * param successFn
 */
 export function $getIndexSellerList(successFn) {
     getRequest('http://localhost:3000','/app/mock/223715/shop/indexseller','',successFn);
+}
+/*
+ * 1.获取list信息
+ * @param params 请求参数
+ * param successFn
+*/
+export function $getList(successFn) {
+    getRequest('http://localhost:3000','/app/mock/223715/shop/list','',successFn);
 }

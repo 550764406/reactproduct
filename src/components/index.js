@@ -5,7 +5,7 @@ import Content from './index/index';
 import '../assets/css/index.less';
 import {  connect } from 'react-redux';
 import store from '../store/index';
-import { getInitHomeData,getInitHomeOftenData,getInitIndexSellerData } from '../store/actionCreators'
+import { getInitHomeData,getInitHomeOftenData,getInitIndexSellerData } from '../store/actionCreators';
 
 class Index extends Component{
     constructor(props){
@@ -20,7 +20,7 @@ class Index extends Component{
         return (
             <>
                 <Header />
-                <Content />
+                <Content></Content>
                 <Footer/>
             </>
         )
@@ -34,7 +34,11 @@ class Index extends Component{
         store.dispatch(oftenAction);
         //推荐商家
         const indexSellAction = getInitIndexSellerData();
-        store.dispatch(indexSellAction)
+        store.dispatch(indexSellAction);
+        //异步请求回来之前子组件unmout（卸载）
+        this.setState = (state, callback) => {
+            return;
+        };
     }
 }
 export default connect()(Index);

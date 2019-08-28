@@ -1,5 +1,6 @@
 /** @format */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Row, Col, Tabs} from 'antd';
 import img from '../../../assets/img/2.jpg'
 import img1 from '../../../assets/img/3.jpg'
@@ -18,7 +19,7 @@ export default class sale extends React.Component{
                     {
                         props.mylist ? props.mylist.lists.list.map((item) => {
                             return <Col span={6} key={item.id}>
-                                <a href={item.company}>
+                                <Link to={'/detail/'+ item.id}>
                                     <dl>
                                         <dt>
                                             <img src={img1} alt=""/>
@@ -32,7 +33,7 @@ export default class sale extends React.Component{
                                         <dd>
                                             <em>{item.company}</em>
                                         </dd>
-                                </dl></a>
+                                </dl></Link>
                             </Col>
                         }) : null
                     }
@@ -45,20 +46,22 @@ export default class sale extends React.Component{
                                 props.oftenlist &&
                                 props.oftenlist.lists.list.map((item) => {
                                     return <Col span={6} key={item.id}>
-                                        <a href={item.company}><dl>
-                                            <dt>
-                                                <img src={img} alt=""/>
-                                            </dt>
-                                            <dd>{item.title}</dd>
-                                            <dd>
-                                                <span>
-                                                  <b>¥&nbsp;</b> {item.price}
-                                                </span>
-                                            </dd>
-                                            <dd>
-                                                <em>{item.company}</em>
-                                            </dd>
-                                        </dl></a>
+                                        <Link to={'/detail/'+ item.id}>
+                                            <dl>
+                                                <dt>
+                                                    <img src={img} alt=""/>
+                                                </dt>
+                                                <dd>{item.title}</dd>
+                                                <dd>
+                                                    <span>
+                                                      <b>¥&nbsp;</b> {item.price}
+                                                    </span>
+                                                </dd>
+                                                <dd>
+                                                    <em>{item.company}</em>
+                                                </dd>
+                                            </dl>
+                                        </Link>
                                     </Col>
                                 })
                             }

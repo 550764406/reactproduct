@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Row, Col} from 'antd';
 import img from '../../../assets/img/1.jpg'
 
@@ -16,7 +17,7 @@ export default class List extends React.Component{
                     {
                         props.oftenlist ? props.oftenlist.lists1.list1.map((item) => {
                             return <Col span={6} key={item.id}>
-                                <a href={item.company}>
+                                <Link to={'/detail/'+ item.id}>
                                     <dl>
                                         <dt>
                                             <img src={img} alt=""/>
@@ -30,7 +31,8 @@ export default class List extends React.Component{
                                         <dd>
                                             <em>{item.company}</em>
                                         </dd>
-                                    </dl></a>
+                                    </dl>
+                                </Link>
                             </Col>
                         }) : null
                     }

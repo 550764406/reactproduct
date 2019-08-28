@@ -1,4 +1,4 @@
-import{ INITHOME,INITOFTENHOME,INITSELLERLISTHOME } from './actionType';
+import{ INITHOME,INITOFTENHOME,INITSELLERLISTHOME,INITLIST } from './actionType';
 const defaultStatus = {
 
 }
@@ -20,6 +20,11 @@ export default (state = defaultStatus,action)=>{
             return {
                 ...state,
                 indexsellerlists:  action.data
+            }
+        case INITLIST:
+            return {
+                ...state,
+                goodlist:  action.data
             }
         default:
             return state
