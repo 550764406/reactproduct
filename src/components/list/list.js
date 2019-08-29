@@ -38,7 +38,10 @@ class List extends React.Component{
         // 遍历icon列表
         listArr.forEach((item,index) => {
             // 每8条为一页；例：0-7为第一页
-            // page为当前页码；
+            // currentPage为当前页码；
+            // 0/6 1/6 2/6 3/6 4/6 5/6
+            // 6/6 7/6 8/6 9/6 10/6 11/6
+            // 12/6 13/6 14/6 15/6
             const currentPage =Math.floor(index/defaltSize)
             // 判断pages中当前页的存储数组是否已声明，未声明则声明当前页为数组格式；
             if(!listNewArr[currentPage]){

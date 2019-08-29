@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a0b66c-6ec1-4d96-8ff6-28fa8d537051" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/header.js" afterPath="$PROJECT_DIR$/src/common/header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index/list/list.js" afterPath="$PROJECT_DIR$/src/components/index/list/list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index/sale/sale.js" afterPath="$PROJECT_DIR$/src/components/index/sale/sale.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/list/list.js" afterPath="$PROJECT_DIR$/src/components/list/list.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,25 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/list/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="343">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#2156#2357#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -75,9 +60,9 @@
       <find>reqwest</find>
       <find>columns</find>
       <find>handleTableChange</find>
-      <find>getInitListDataAction</find>
       <find>cPage</find>
       <find>getTableList</find>
+      <find>getInitListDataAction</find>
     </findStrings>
     <replaceStrings>
       <replace>{img}</replace>
@@ -122,9 +107,9 @@
         <option value="$PROJECT_DIR$/src/components/detail/detail.js" />
         <option value="$PROJECT_DIR$/src/components/index/sale/sale.js" />
         <option value="$PROJECT_DIR$/src/components/index/list/list.js" />
-        <option value="$PROJECT_DIR$/src/components/list/list.js" />
         <option value="$PROJECT_DIR$/src/components/index/indexseller/indexseller.js" />
         <option value="$PROJECT_DIR$/src/common/header.js" />
+        <option value="$PROJECT_DIR$/src/components/list/list.js" />
       </list>
     </option>
   </component>
@@ -179,24 +164,6 @@
               <item name="reactproduct" type="b2602c69:ProjectViewProjectNode" />
               <item name="reactproduct" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactproduct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactproduct" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactproduct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactproduct" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactproduct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactproduct" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -271,12 +238,12 @@
       <workItem from="1566523777003" duration="16888000" />
       <workItem from="1566546098905" duration="7608000" />
       <workItem from="1566955269699" duration="19037000" />
-      <workItem from="1567043611814" duration="18078000" />
+      <workItem from="1567043611814" duration="19584000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148446000" />
+    <option name="totallyTimeSpent" value="149952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -664,22 +631,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/list/list.js">
+    <entry file="file://$PROJECT_DIR$/src/common/header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="675">
+          <caret line="30" column="86" lean-forward="true" selection-start-line="30" selection-start-column="86" selection-end-line="30" selection-end-column="86" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/header.js">
+    <entry file="file://$PROJECT_DIR$/src/components/list/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="343">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#2156#2357#0" expanded="false" />
           </folding>
         </state>
       </provider>
