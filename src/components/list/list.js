@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Pagination  } from 'antd';
+import { Row, Col, Pagination } from 'antd';
 import { connect } from 'react-redux';
 import Header from '../../common/header';
 import Footer from '../../common/footer';
@@ -12,27 +12,60 @@ class List extends React.Component{
     constructor(props){
         super(props);
         this.handleStoreChange = this.handleStoreChange.bind(this);
-        store.subscribe(this.handleStoreChange)
+        this.state={
+            data: [],
+            pagination: {
+                defaultPageSize: 8,
+                total: 0,
+                currentSize: 1
+            },
+            loading: false,
+            tablist:[]
+        }
+        store.subscribe(this.handleStoreChange);
     }
     handleStoreChange(){
         this.setState(store.getState())
     }
-
     componentDidMount(){
-        const action = getInitListData();
-        store.dispatch(action);
+        this.props.getInitListDataAction();
+    }
+    getTableList = (page) => {
+        if(!this.props.goodlists) return;
+        const defaltSize = this.state.pagination.defaultPageSize;
+        const listArr = this.props.goodlists.lists.goodlist; //当前数组所有值
+        const listNewArr=[];
+        // 遍历icon列表
+        listArr.forEach((item,index) => {
+            // 每8条为一页；例：0-7为第一页
+            // page为当前页码；
+            const currentPage =Math.floor(index/defaltSize)
+            // 判断pages中当前页的存储数组是否已声明，未声明则声明当前页为数组格式；
+            if(!listNewArr[currentPage]){
+                listNewArr[currentPage]=[]
+            }
+            // 将当前icon信息放入对应的页码数组中；
+            listNewArr[currentPage].push(item)
+        })
+        // 返回分页之后的icon集合；
+        // console.log('pages=======>',listNewArr[page-1])
+        return listNewArr[page-1];
     }
 
-    onChange(pageNumber) {
-        console.log('Page: ', pageNumber);
+    onChange=(pageNumber) =>{
+        this.getTableList(pageNumber);
+        let data = Object.assign({}, this.state.pagination, {currentSize: pageNumber})
+        this.setState({
+            pagination: data
+        })
     }
 
-    itemRender(current, type, originalElement) {
+    itemRender=(current, type, originalElement)=> {
         if (type === 'prev') {
-            return <a>上一页</a>;
+            return <span>上一页</span>;
         }
         if (type === 'next') {
-            return <a>下一页</a>;
+            return <span>下一页</span>;
         }
         return originalElement;
     }
@@ -57,13 +90,13 @@ class List extends React.Component{
                     </div>
                     <Row gutter={16}>
                         {
-                            this.props.goodlists? this.props.goodlists.lists.goodlist.map(item=>{
+                            this.getTableList(this.state.pagination.currentSize)?this.getTableList(this.state.pagination.currentSize).map(item=>{
                                 return <Col className="gutter-row" span={6} key={item.id}>
                                     <dl>
                                         <dt><img src={img} alt=""/></dt>
                                         <dd>{item.title}</dd>
                                         <dd>
-                                            <span><b>¥&nbsp;</b> {item.price}<i>近期成交:{item.sellnum}件</i></span>
+                                            <span><b>+¥&nbsp;</b> {item.price}<i>近期成交:{item.sellnum}件</i></span>
                                         </dd>
                                         <dd>
                                             <em>{item.company}</em>
@@ -77,10 +110,10 @@ class List extends React.Component{
                         <Pagination
                             itemRender={this.itemRender}
                             showQuickJumper
-                            total={this.props.pageTotal}
+                            defaultPageSize={this.state.pagination.defaultPageSize}
                             onChange={this.onChange}
-                            defaultPageSize={8}  />
-                        <span>共1页,{this.props.pageTotal}条记录,当前为第1页,每页8条</span>
+                            total={this.props.goodlists?this.props.goodlists.lists.goodlist.length:0}  />
+                        <span>共1页,{this.state.pagination.total}条记录,当前为第1页,每页{this.state.pagination.defaultPageSize}条</span>
                     </div>
 
                 </div>
@@ -92,15 +125,17 @@ class List extends React.Component{
 }
 
 const mapStateToProps = (state)=>{
-    console.log('0000000000000000000',state)
     return{
         goodlists: state.goodlist,
-        pageTotal: state.goodlist?state.goodlist.lists.total: 0
     }
 }
 
 const mapActionToProps = (dispatch)=>{
     return {
+        getInitListDataAction() {
+            const action = getInitListData();
+            dispatch(action);
+        },
 
     }
 }
