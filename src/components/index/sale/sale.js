@@ -13,7 +13,7 @@ export default class sale extends React.Component{
             <div>
                 <h1>
                     云链促销<em>热销爆款</em>
-                    <span>更多</span>
+                    <span><Link to="/list">更多</Link></span>
                 </h1>
                 <Row>
                     {

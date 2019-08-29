@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col, Tabs, Icon, Input, Button } from 'antd';
 import logo from '../assets/img/logo.png';
 
@@ -27,7 +28,7 @@ class Header extends React.Component{
                 </Row>
                 <Row>
                     <Col span={6}>
-                        <img src={logo} alt='' className="logo" />
+                        <Link to="/"><img src={logo} alt='' className="logo" /></Link>
                     </Col>
                     <Col span={10}>
                         <Tabs defaultActiveKey='2' className="logomiddle" animated={false}>

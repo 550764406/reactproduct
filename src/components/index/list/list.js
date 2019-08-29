@@ -10,7 +10,7 @@ export default class List extends React.Component{
             <>
                 <h2>
                     酒水饮料<b className="blue">酒水</b>
-                    <span>更多</span>
+                    <span><Link to="/list">更多</Link></span>
                 </h2>
             <div className="salemain">
                 <Row>

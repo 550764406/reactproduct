@@ -15,9 +15,9 @@ class List extends React.Component{
         this.state={
             data: [],
             pagination: {
-                defaultPageSize: 8,
+                defaultPageSize: 6,
                 total: 0,
-                currentSize: 1
+                currentSize: 2
             },
             loading: false,
             tablist:[]
@@ -62,10 +62,10 @@ class List extends React.Component{
 
     itemRender=(current, type, originalElement)=> {
         if (type === 'prev') {
-            return <span>上一页</span>;
+            return <a href="/">上一页</a>;
         }
         if (type === 'next') {
-            return <span>下一页</span>;
+            return <a href="/">下一页</a>;
         }
         return originalElement;
     }
@@ -112,6 +112,7 @@ class List extends React.Component{
                             showQuickJumper
                             defaultPageSize={this.state.pagination.defaultPageSize}
                             onChange={this.onChange}
+                            current = {this.state.pagination.currentSize}
                             total={this.props.goodlists?this.props.goodlists.lists.goodlist.length:0}  />
                         <span>共1页,{this.state.pagination.total}条记录,当前为第1页,每页{this.state.pagination.defaultPageSize}条</span>
                     </div>
