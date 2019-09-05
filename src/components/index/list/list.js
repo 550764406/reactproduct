@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Row, Col} from 'antd';
 import img from '../../../assets/img/1.jpg'
 
-export default (props)=>{
+export default (props) => {
     return(
         <>
         <h2>

@@ -6,7 +6,7 @@ import img from '../../../assets/img/2.jpg'
 import img1 from '../../../assets/img/3.jpg'
 const {TabPane} = Tabs;
 
-export default (props)=>{
+export default (props) => {
     return (
         <div>
             <h1>
