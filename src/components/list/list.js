@@ -3,10 +3,12 @@ import { Row, Col, Pagination } from 'antd';
 import { connect } from 'react-redux';
 import Header from '../../common/header';
 import Footer from '../../common/footer';
+import Menu from '../../common/listmenu';
 import '../../assets/css/list.less';
 import img from '../../assets/img/2.jpg';
 import store from '../../store/index';
 import { getInitListData } from '../../store/actionCreators';
+import { Link } from 'react-router-dom';
 
 class List extends React.Component{
     constructor(props){
@@ -27,8 +29,14 @@ class List extends React.Component{
     handleStoreChange(){
         this.setState(store.getState())
     }
-    componentDidMount(){
-        this.props.getInitListDataAction();
+    componentDidMount (){
+
+        this.setState({
+            tablist: this.props.getInitListDataAction()
+        })
+        // this.setState = (state, callback) => {
+        //     return;
+        // };
     }
     getTableList = (page) => {
         if(!this.props.goodlists) return;
@@ -65,10 +73,10 @@ class List extends React.Component{
 
     itemRender=(current, type, originalElement)=> {
         if (type === 'prev') {
-            return <a href="/">上一页</a>;
+            return <b>上一页</b>;
         }
         if (type === 'next') {
-            return <a href="/">下一页</a>;
+            return <b>下一页</b>;
         }
         return originalElement;
     }
@@ -77,6 +85,7 @@ class List extends React.Component{
         return(
             <>
                 <Header />
+                <Menu />
                 <div className="listwarpper">
                     <div className="title">当前位置：首页>饼干/糕点</div>
                     <div className="sort">
@@ -95,6 +104,7 @@ class List extends React.Component{
                         {
                             this.getTableList(this.state.pagination.currentSize)?this.getTableList(this.state.pagination.currentSize).map(item=>{
                                 return <Col className="gutter-row" span={6} key={item.id}>
+                                    <Link to={'/detail/'+ item.id}>
                                     <dl>
                                         <dt><img src={img} alt=""/></dt>
                                         <dd>{item.title}</dd>
@@ -105,6 +115,7 @@ class List extends React.Component{
                                             <em>{item.company}</em>
                                         </dd>
                                     </dl>
+                                    </Link>
                                 </Col>
                             }):null
                         }

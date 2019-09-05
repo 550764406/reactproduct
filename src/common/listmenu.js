@@ -116,46 +116,58 @@ const menulists = [
         ]
     }
 ];
-
-export default () => (
-    <div>
-        <div className="banner">
-            <div className="contentwarper">
-                <div className="menutitle">
-                    <span onClick={(e)=>this.aa(e)}>全部商品分类</span>
-                    <ul>
-                        {menusort.map((item) => (
-                            <li key={item}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-                <Menu style={{width: 200}} mode='vertical'>
-                    {menulists.map((item, index) => (
-                        <SubMenu
-                            key={index}
-                            title={
-                                <span>
+export default class ListMenu extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            ishow: false
+        }
+    }
+    isShowMenu=()=>{
+        this.setState({
+            ishow: !this.state.ishow
+        })
+    }
+    render(){
+        return <div>
+            <div className="banner listbanner">
+                <div className="contentwarper" onMouseOver={this.isShowMenu} onMouseOut={this.isShowMenu}>
+                    <div className="menutitle">
+                        <span onClick={(e)=>this.aa(e)}>全部商品分类</span>
+                        <ul>
+                            {menusort.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <Menu style={ this.state.ishow ? {width: 200,background:"#fff",position:"absolute",zIndex:999,display:"block"}:{display:"none"}} mode='vertical'>
+                        {menulists.map((item, index) => (
+                            <SubMenu
+                                key={index}
+                                title={
+                                    <span>
                           <Icon type={item.type}/>
                           <span>{item.title}</span>
                         </span>
-                            }
-                        >
-                            {item.list.map((item1, index1) => (
-                                <Menu.Item key={index1}>
-                                    <em className="menuitemsort">{item1.title}</em>
-                                    {item1.list.map((item2, index2) => (
-                                        <span key={index2} className="menuitemsortlist">
+                                }
+                            >
+                                {item.list.map((item1, index1) => (
+                                    <Menu.Item key={index1}>
+                                        <em className="menuitemsort">{item1.title}</em>
+                                        {item1.list.map((item2, index2) => (
+                                            <span key={index2} className="menuitemsortlist">
                                   <a href={item2.title}>{item2.title}</a>
                                 </span>
-                                    ))}
-                                </Menu.Item>
-                            ))}
-                        </SubMenu>
-                    ))}
-                </Menu>
+                                        ))}
+                                    </Menu.Item>
+                                ))}
+                            </SubMenu>
+                        ))}
+                    </Menu>
+                </div>
             </div>
+
+
         </div>
-
-
-    </div>
-);
+    }
+};
