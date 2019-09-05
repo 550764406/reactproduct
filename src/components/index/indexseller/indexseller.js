@@ -5,8 +5,7 @@ import img2 from '../../../assets/img/4.jpg'
 export default (props)=>{
     return (
         <>
-        <h3>
-            推荐供货商
+        <h3>推荐供货商
             <span>更多</span>
         </h3>
         <Row gutter={20}>

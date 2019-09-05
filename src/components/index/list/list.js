@@ -7,7 +7,7 @@ export default (props) => {
     return(
         <>
         <h2>
-            酒水饮料<b className="blue">酒水</b>
+            酒水饮料 <b className="blue">酒水</b>
             <span><Link to="/list">更多</Link></span>
         </h2>
         <div className="salemain">
